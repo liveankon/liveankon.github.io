@@ -41,6 +41,104 @@
       z-index: 0;
     }
 
+    .float-particles {
+      list-style: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .float-particles li {
+      position: absolute;
+      display: block;
+      bottom: -140px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(0, 255, 255, 0.18);
+      border: 1px solid rgba(0, 255, 255, 0.35);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
+      animation: floatUp linear infinite;
+    }
+
+    .float-particles li:nth-child(1) {
+      left: 8%;
+      animation-duration: 11s;
+      animation-delay: 0s;
+      width: 12px;
+      height: 12px;
+    }
+
+    .float-particles li:nth-child(2) {
+      left: 18%;
+      animation-duration: 14s;
+      animation-delay: 1s;
+      width: 20px;
+      height: 20px;
+    }
+
+    .float-particles li:nth-child(3) {
+      left: 30%;
+      animation-duration: 10s;
+      animation-delay: 3s;
+    }
+
+    .float-particles li:nth-child(4) {
+      left: 42%;
+      animation-duration: 16s;
+      animation-delay: 0.5s;
+      width: 24px;
+      height: 24px;
+    }
+
+    .float-particles li:nth-child(5) {
+      left: 56%;
+      animation-duration: 9s;
+      animation-delay: 2s;
+      width: 14px;
+      height: 14px;
+    }
+
+    .float-particles li:nth-child(6) {
+      left: 68%;
+      animation-duration: 13s;
+      animation-delay: 4s;
+    }
+
+    .float-particles li:nth-child(7) {
+      left: 78%;
+      animation-duration: 12s;
+      animation-delay: 1.7s;
+      width: 22px;
+      height: 22px;
+    }
+
+    .float-particles li:nth-child(8) {
+      left: 88%;
+      animation-duration: 15s;
+      animation-delay: 2.6s;
+      width: 16px;
+      height: 16px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(-115vh) translateX(45px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
     .card {
       width: min(92vw, 560px);
       z-index: 2;
@@ -133,6 +231,7 @@
         transform: scale(1);
         opacity: 1;
       }
+
       50% {
         transform: scale(1.25);
         opacity: 0.65;
@@ -152,6 +251,16 @@
 </head>
 <body>
   <canvas id="particles"></canvas>
+  <ul class="float-particles" aria-hidden="true">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 
   <main class="card">
     <h1>Liveankon</h1>
